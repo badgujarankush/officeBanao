@@ -1,0 +1,22 @@
+.mainHeader{
+    position: relative;
+    background: #E9EDF3;
+    width: 100%;
+    height: 3rem;
+}
+
+.headerTile{
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #323C47;
+    position: absolute;
+    margin-left: 2rem;
+    top:40%;
+    padding: 0.5rem;
+    width: 6rem;
+    background: #FDFDFD;
+    border-radius: 10px 10px 0px 0px;
+    text-align: center;
+    
+}

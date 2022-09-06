@@ -1,0 +1,67 @@
+
+
+/* PARENT DIV */
+
+.nav{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 50px;
+    height: 100vh;
+    background: #121942;
+    box-shadow: 6px 0px 20px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    transition: width 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+/* BrandLogo */
+.head{
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+#brandName{
+    width: 80%;
+    height: auto;
+} 
+
+
+.list{
+    position: absolute;
+    top:70%;
+}
+
+.listItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    list-style: none;
+    
+}
+
+.listItem p{
+    width: 70px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 400;
+}
+
+
+#profile{
+    border-radius: 50%;
+}
+.nav.active{
+    align-items: flex-start;
+    width: 200px;
+}
