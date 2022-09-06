@@ -1,0 +1,28 @@
+.progressTab{
+    background: #DEEAFA;
+    border-radius: 9px 9px 0px 0px;
+    padding: 1rem;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.bundle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:0.5rem;
+    margin-right: 0.5rem;
+}
+
+.bundle h1{
+    font-size: 0.6rem;
+}
+.bar{
+    background: #121942;
+    width: 50px;
+    height: 2px;
+}

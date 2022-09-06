@@ -1,0 +1,10 @@
+.outerRing {
+  background: #ffffff;
+  border: 1px solid #121942;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
