@@ -1,14 +1,12 @@
 import './App.css'
-import Navbar from './Components/Navbar'
-import Header from './Components/Header';
-import Dropdown from './Components/Dropdown';
-import NewProject from './Components/NewProject';
-import {projectsData} from './Utils/data';
+import { Navbar, Header, Dropdown, NewProject,ProgressBar,Configuration, Chart, SpaceType,Card } from './Components';
+import {projectsData, workSpace,cardData} from './Utils/data';
 import { useState } from 'react';
-import ProgressBar from './Components/ProgressBar';
 function App() {
 
   const [projectsList, setprojectsList] = useState(projectsData);
+  const [area,setArea] = useState(3000);
+  const [selected, setSelected] = useState("");
 
   const addNewProject = (project)=>{
     const size = projectsList.length
@@ -16,6 +14,16 @@ function App() {
     setprojectsList([...projectsList,newProject]);
     console.log("Final Projects List:",projectsList);
 }
+
+  const handleArea = (input)=>{
+    setArea(input);
+  }
+
+  const handleSelect =(e)=>{
+      setSelected(e);
+      console.log(selected);
+  }
+  console.log("Area Input:", area);
   return (
     <div className="App">
     {/* Side Bar */}
@@ -50,11 +58,40 @@ function App() {
             </div>
 
             {/* SPLIT */}
-          {/* LEFT PANEL - SET AREA */}
-          {/* RIGHT PANEL - CARDS */}
+            <div className='split'>
+              {/* LEFT PANEL - SET AREA */}
+              <div className='left'>
+                  {/* <h1>Configure Your Area</h1> */}
+                  <Configuration area={area} setArea={handleArea}/>
+                  <div className='visualizer'>
+                    {/* CHART */}
+                    <div className='graph'>
+                    <Chart area={area}/>
+                    </div>
+                    
+                    {/* Types of workspace */}
+                    {/* <h1>Type of workspace</h1> */}
+                    <div className='workSpaceType'>
+                    {workSpace.map(item=>
+                      <SpaceType title={item.name} color={item.color} tag={item.tag} handleSelect={handleSelect}/>
+                    )}
+                    </div>
+                    
+                  </div>
+              </div>
+              {/* RIGHT PANEL - CARDS */}
+              <div className='right'>
+                   {/* {selected?cardData.map(item=>
+                      <Card  desc={item.desc} name={item.name}/>
+                   ): cardData.filter(item=> item.tag ===selected)} */}
+                   {cardData.map((item)=>item.tag.toLowerCase().includes(selected.toLowerCase())&&(<Card desc={item.desc} name={item.name}/>))}
+              </div>
+            </div>
+  
+          
           </div>
         
-        
+        <button className='end'>Proceed</button>
         </div>
       </div>
         
